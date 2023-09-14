@@ -1,6 +1,8 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
+import { connectToDB } from "@utilities/database";
+
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -14,8 +16,16 @@ const handler = NextAuth({
   async signIn({ profile }) {
     try {
       // serverless -> lambda -> dynamodb
+      await connectToDB();
+
+      // check if an user already exists
+
+      // if not, create a new user
+
+      return true;
     } catch (error) {
-      
+      console.log(error);
+      return false;
     }
   }
 })
