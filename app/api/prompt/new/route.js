@@ -1,3 +1,11 @@
-export const POST = async (req, res) => {
+import { connectToDB } from "@utilities/database"
 
+export const POST = async (req, res) => {
+  const { userId, prompt, tag } = await req.json();
+
+  try {
+    await connectToDB();
+  } catch (error) {
+    
+  }
 }
