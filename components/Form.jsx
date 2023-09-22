@@ -32,6 +32,20 @@ const Form = ({
           required
           className="form_textarea"
         />
+
+        <label>
+          <span className="font-satoshi font-semibold text-base text-gray-700">
+            Tag {' '}
+            <span className="font-normal">(#product, #webdevelopment, #idea)</span>
+          </span>
+        </label>
+        <input
+          value={post.tag}
+          onChange={(e) => setPost({...post, tag: e.target.value})}
+          placeholder="#tag"
+          required
+          className="form_input"
+        />
       </form>
     </section>
   )
