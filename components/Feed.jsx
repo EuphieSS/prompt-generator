@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 
 import PromptCard from "./PromptCard";
 
+const PromptCardList = ({ data, handleTagClick }) => {
+  return (
+    <div className="mt-16 prompt_layout">
+
+    </div>
+  )
+}
+
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
   const [posts, setPosts] = useState([]);
@@ -36,6 +44,10 @@ const Feed = () => {
         />
       </form>
 
+      <PromptCardList
+        data={posts}
+        handleTagClick={() => {}}
+      />
     </section>
   )
 }
