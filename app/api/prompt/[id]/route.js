@@ -19,7 +19,7 @@ export const GET = async (req, { params }) => {
 
 // PATCH (update)
 export const PATCH = async (req, { params }) => {
-  const { prompt, tag } = await req.JSON();
+  const { prompt, tag } = await req.json();
 
   try {
     await connectToDB();
